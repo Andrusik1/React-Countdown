@@ -1,0 +1,100 @@
+$Grayishblue:hsl(237,18%,59%);
+$Softred:hsl(345,95%,68%);
+$White:hsl(0,0%,100%);
+$Darkdesaturatedblue:hsl(236,21%,26%);
+$Verydarkblue:hsl(235,16%,14%);
+$VerydarkblueMostlyBlack:hsl(234,17%,12%);
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Red hat text';
+    box-sizing: border-box;
+}
+@mixin flex($displayType:flex,$alignItems:center,$justifyContent:center)
+{
+display: $displayType;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+.countDown
+{
+    width: 100vw;
+    height: 100dvh;
+    background-color: #551e49;
+    main
+    {
+        @include flex();
+        flex-direction: column;
+        background: url(../images/bg-stars.svg);
+        height: 70%;
+        width: 100%;
+        h1
+        {
+            text-align: center;
+            color: white;
+            margin-bottom: 6%;
+        }
+        .countDown__timer
+        {
+height: clamp(75px,10vw,200px);
+    width: clamp(300px,48vw,800px);
+    display: flex;
+    gap:2vw;
+            .countDown__timer--card
+            {
+              p {color: $Softred;
+               font-size: clamp(30px,5vw,72px);
+              }
+              border-radius: 1vw;
+               @include flex;
+background: linear-gradient(0deg, $Verydarkblue 50%, $VerydarkblueMostlyBlack 50%);
+                width: 25%;
+                height: 100%;
+              box-shadow: 0px 1vw 0px 0px rgb(22, 22, 24);
+          
+            }
+            .countDown__timer--desc
+            {
+                margin-top: 6%;
+                 width: 25%;
+                height: 10%;
+                  @include flex;
+                  text-transform: uppercase;
+                  color: $Grayishblue;
+                  font-size: clamp(12px,1vw,72px);
+            }
+        }
+    }
+    footer
+    {
+        height: 30vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2vw;
+        background: url(../images/pattern-hills.svg);
+        background-size:100% 100%;
+        svg
+        {
+            fill:#8385A9;
+            transition: 1s;
+            &:hover
+            {
+                transition: 1s;
+                fill: $Softred;
+            }
+        }
+    }
+}
+.darker-text
+{
+        position: absolute;
+    width: 7vw;
+    height: 4vh;
+    margin-bottom: 4vh;
+    background-color: $VerydarkblueMostlyBlack;
+    z-index: 500;
+    opacity: 0.4;
+}
