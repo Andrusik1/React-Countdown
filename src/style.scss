@@ -20,8 +20,9 @@ display: $displayType;
 .countDown
 {
     width: 100vw;
+    height: 100vh;
     height: 100dvh;
-    background-color: #551e49;
+    background-color: $Verydarkblue;
     main
     {
         @include flex();
@@ -34,10 +35,12 @@ display: $displayType;
             text-align: center;
             color: white;
             margin-bottom: 6%;
+            letter-spacing: 5px;
+            font-size: clamp(16px,3vw,32px);
         }
         .countDown__timer
         {
-height: clamp(75px,10vw,200px);
+height: clamp(75px,10vw,160px);
     width: clamp(300px,48vw,800px);
     display: flex;
     gap:2vw;
@@ -48,7 +51,7 @@ height: clamp(75px,10vw,200px);
               }
               border-radius: 1vw;
                @include flex;
-background: linear-gradient(0deg, $Verydarkblue 50%, $VerydarkblueMostlyBlack 50%);
+background: linear-gradient(0deg, $Darkdesaturatedblue 50%, hsl(237, 20%, 19%) 50%);
                 width: 25%;
                 height: 100%;
               box-shadow: 0px 1vw 0px 0px rgb(22, 22, 24);
@@ -82,6 +85,7 @@ background: linear-gradient(0deg, $Verydarkblue 50%, $VerydarkblueMostlyBlack 50
             transition: 1s;
             &:hover
             {
+                cursor: pointer;
                 transition: 1s;
                 fill: $Softred;
             }
@@ -91,10 +95,10 @@ background: linear-gradient(0deg, $Verydarkblue 50%, $VerydarkblueMostlyBlack 50
 .darker-text
 {
         position: absolute;
-    width: 7vw;
+    width: clamp(50px, 10vw, 150px);
     height: 4vh;
     margin-bottom: 4vh;
-    background-color: $VerydarkblueMostlyBlack;
+    background-color: hsl(237, 20%, 19%);
     z-index: 500;
     opacity: 0.4;
 }
